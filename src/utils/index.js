@@ -45,11 +45,57 @@ export function parseTime(time, cFormat) {
   const time_str = format.replace(/{([ymdhisa])+}/g, (result, key) => {
     const value = formatObj[key]
     // Note: getDay() returns 0 on Sunday
-    if (key === 'a') { return ['日', '一', '二', '三', '四', '五', '六'][value ] }
+    if (key === 'a') { return ['日', '一', '二', '三', '四', '五', '六'][value] }
     return value.toString().padStart(2, '0')
   })
   return time_str
 }
+
+/**
+ * 构造树型结构数据
+ * @param {*} data 数据源
+ * @param {*} id id字段 默认 'id'
+ * @param {*} parentId 父节点字段 默认 'parentId'
+ * @param {*} children 孩子节点字段 默认 'children'
+ * @param {*} rootId 根Id 默认 0
+ */
+export function handleTree(data, id, parentId, children, rootId) {
+  id = id || 'id'
+  parentId = parentId || 'parentId'
+  children = children || 'children'
+  rootId = rootId || 0
+  //对源数据深度克隆
+  const cloneData = JSON.parse(JSON.stringify(data))
+  //循环所有项
+  const treeData = cloneData.filter(father => {
+    let branchArr = cloneData.filter(child => {
+      //返回每一项的子级数组
+      return father[id] === child[parentId]
+    });
+    branchArr.length > 0 ? father.children = branchArr : '';
+    //返回第一层
+    return father[parentId] === rootId;
+  });
+  return treeData != '' ? treeData : data;
+}
+
+
+/**
+ * 
+ * @param {*} datas 
+ * @param {*} value 
+ */
+export function selectDictLabel(datas, value) {
+  var actions = [];
+  Object.keys(datas).map((key) => {
+    if (datas[key].dictValue == ('' + value)) {
+      actions.push(datas[key].dictLabel);
+      return false;
+    }
+  })
+  return actions.join('');
+}
+
 
 /**
  * @param {number} time
@@ -168,12 +214,12 @@ export function param2Obj(url) {
   }
   return JSON.parse(
     '{"' +
-      decodeURIComponent(search)
-        .replace(/"/g, '\\"')
-        .replace(/&/g, '","')
-        .replace(/=/g, '":"')
-        .replace(/\+/g, ' ') +
-      '"}'
+    decodeURIComponent(search)
+      .replace(/"/g, '\\"')
+      .replace(/&/g, '","')
+      .replace(/=/g, '":"')
+      .replace(/\+/g, ' ') +
+    '"}'
   )
 }
 
@@ -252,7 +298,7 @@ export function getTime(type) {
 export function debounce(func, wait, immediate) {
   let timeout, args, context, timestamp, result
 
-  const later = function() {
+  const later = function () {
     // 据上一次触发时间间隔
     const last = +new Date() - timestamp
 
@@ -269,7 +315,7 @@ export function debounce(func, wait, immediate) {
     }
   }
 
-  return function(...args) {
+  return function (...args) {
     context = this
     timestamp = +new Date()
     const callNow = immediate && !timeout

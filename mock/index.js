@@ -5,12 +5,16 @@ import user from './user'
 import role from './role'
 import article from './article'
 import search from './remote-search'
+import menu from './menu'
+import menuControl from './menuControl'
 
 const mocks = [
   ...user,
   ...role,
   ...article,
-  ...search
+  ...search,
+  ...menu,
+  ...menuControl
 ]
 
 // for front mock
@@ -20,7 +24,7 @@ export function mockXHR() {
   // mock patch
   // https://github.com/nuysoft/Mock/issues/300
   Mock.XHR.prototype.proxy_send = Mock.XHR.prototype.send
-  Mock.XHR.prototype.send = function() {
+  Mock.XHR.prototype.send = function () {
     if (this.custom.xhr) {
       this.custom.xhr.withCredentials = this.withCredentials || false
 
@@ -32,7 +36,7 @@ export function mockXHR() {
   }
 
   function XHR2ExpressReqWrap(respond) {
-    return function(options) {
+    return function (options) {
       let result = null
       if (respond instanceof Function) {
         const { body, type, url } = options

@@ -7,7 +7,12 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "@riophae/vue-treeselect": "^0.4.0",
+    "@vue/cli-plugin-babel": "^4.3.1",
     "axios": "^0.19.2",
+    "babel-core": "^6.26.3",
     "element-ui": "^2.13.1",
     "js-cookie": "^2.2.1",
     "mockjs": "^1.1.0",

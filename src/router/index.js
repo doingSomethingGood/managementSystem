@@ -35,6 +35,42 @@ export const constantRoutes = [
     component: () => import('@/views/error-page/401'),
     hidden: true
   },
+
+  {
+    name: "System",
+    path: "/",
+    hidden: false,
+    component: Layout,
+    alwaysShow: true,
+    meta: { title: "系统管理", icon: "system" },
+    children: [
+      // {
+      //   name: "User",
+      //   path: "user",
+      //   hidden: false,
+      //   component: "user/index",
+      //   meta: { title: "用户管理", icon: "user" }
+      // },
+      {
+        name: "Role",
+        path: "role",
+        hidden: false,
+        component: () => import('@/views/role/index'),
+        meta: { title: "角色管理", icon: "peoples" }
+      },
+      {
+        name: "Menu",
+        path: "menu",
+        hidden: false,
+        component: () => import('@/views/menu/index'),
+        meta: { title: "菜单管理", icon: "tree-table" }
+      }
+    ]
+  }
+
+
+
+
   // {
   //   path: '/',
   //   component: Layout,
