@@ -25,7 +25,7 @@ module.exports = {
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
   publicPath: '/',
-  outputDir: 'dist',
+  outputDir: 'systemMamagement',
   assetsDir: 'static',
   productionSourceMap: false,
   devServer: {

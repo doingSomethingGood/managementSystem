@@ -36,21 +36,29 @@ export const constantRoutes = [
     hidden: true
   },
 
+
+
+  {
+    path: '/',
+    name: 'Home',
+    component: Layout,
+    children: [
+      {
+        path: 'Home',
+        component: () => import('@/views/home/index'),
+        name: '首页',
+        meta: { title: '首页', icon: 'dashboard', affix: true }
+      }
+    ]
+  },
   {
     name: "System",
-    path: "/",
+    path: "/System",
     hidden: false,
     component: Layout,
     alwaysShow: true,
     meta: { title: "系统管理", icon: "system" },
     children: [
-      // {
-      //   name: "User",
-      //   path: "user",
-      //   hidden: false,
-      //   component: "user/index",
-      //   meta: { title: "用户管理", icon: "user" }
-      // },
       {
         name: "Role",
         path: "role",
@@ -66,24 +74,12 @@ export const constantRoutes = [
         meta: { title: "菜单管理", icon: "tree-table" }
       }
     ]
-  }
+  },
 
 
 
 
-  // {
-  //   path: '/',
-  //   component: Layout,
-  //   redirect: '/dashboard',
-  //   children: [
-  //     {
-  //       path: 'dashboard',
-  //       component: () => import('@/views/dashboard/index'),
-  //       name: 'Dashboard',
-  //       meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
-  //     }
-  //   ]
-  // },
+
   // {
   //   path: '/documentation',
   //   component: Layout,
@@ -109,20 +105,20 @@ export const constantRoutes = [
   //     }
   //   ]
   // },
-  // {
-  //   path: '/profile',
-  //   component: Layout,
-  //   redirect: '/profile/index',
-  //   hidden: true,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       component: () => import('@/views/profile/index'),
-  //       name: 'Profile',
-  //       meta: { title: 'Profile', icon: 'user', noCache: true }
-  //     }
-  //   ]
-  // }
+  {
+    path: '/profile',
+    component: Layout,
+    redirect: '/profile/index',
+    hidden: true,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/profile/index'),
+        name: 'Profile',
+        meta: { title: '个人信息', icon: 'user', noCache: true }
+      }
+    ]
+  }
 ]
 export const asyncRoutes = [
   // {

@@ -12,13 +12,13 @@ const users = {
   'admin-token': {
     roles: ['admin'],
     introduction: 'I am a super administrator',
-    avatar: 'http://b-ssl.duitang.com/uploads/item/201410/09/20141009224754_AswrQ.jpeg',
+    avatar: 'https://b-ssl.duitang.com/uploads/item/201410/09/20141009224754_AswrQ.jpeg',
     name: 'Super Admin'
   },
   'editor-token': {
     roles: ['editor'],
     introduction: 'I am an editor',
-    avatar: 'http://b-ssl.duitang.com/uploads/item/201410/09/20141009224754_AswrQ.jpeg',
+    avatar: 'https://b-ssl.duitang.com/uploads/item/201410/09/20141009224754_AswrQ.jpeg',
     name: 'Normal Editor'
   }
 }

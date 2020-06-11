@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    ffffffffffffffffffffffffff
+    this is rolePage you can write anything in this page
     <!-- <el-form :model="queryParams" ref="queryForm" :inline="true">
       <el-form-item label="角色名称" prop="roleName">
         <el-input

@@ -14,7 +14,8 @@ const menuList = [
     url: "http://192.168.2.39/promote/#/home/promotionOverview",
     sign: "promoteOverview",
     children: [],
-    createTime: "2020-04-15 15:12:01"
+    createTime: "2020-04-15 15:12:01",
+    operate:['新增','修改','删除']
   },
   {
     id: 68,
@@ -30,7 +31,8 @@ const menuList = [
     url: "http://192.168.2.39/promote//home/promotionOverview",
     sign: "promoteOverview",
     children: [],
-    createTime: "2020-04-09 17:03:22"
+    createTime: "2020-04-09 17:03:22",
+    operate:['新增','修改','删除']
   },
   {
     id: 69,
@@ -46,7 +48,8 @@ const menuList = [
     url: "http://192.168.2.39/promote/#/home/download/reportDownload",
     sign: "promoteDownload",
     children: [],
-    createTime: "2020-04-09 17:03:59"
+    createTime: "2020-04-09 17:03:59",
+    operate:['新增','修改','删除']
   },
   {
     id: 87,
@@ -77,6 +80,7 @@ const menuList = [
         sign: "roleContro",
         children: [],
         createTime: "2020-04-16 16:49:55",
+        operate:['新增','修改','删除']
       },
       {
         id: 88,
@@ -93,6 +97,7 @@ const menuList = [
         sign: "menuControl",
         children: [],
         createTime: "2020-04-16 16:48:08",
+        operate:['新增','修改','删除']
       },
       {
         id: 89,
@@ -109,6 +114,7 @@ const menuList = [
         sign: "userList",
         children: [],
         createTime: "2020-04-16 16:48:37",
+        operate:['新增','修改','删除']
       }
     ],
     createTime: "2020-04-16 16:47:25"
@@ -141,7 +147,8 @@ const menuList = [
         url: "11111",
         sign: "2222",
         children: [],
-        createTime: "2020-04-17 04:55:02"
+        createTime: "2020-04-17 04:55:02",
+        operate:['新增','修改','删除']
       },
       {
         id: 97,
@@ -157,10 +164,12 @@ const menuList = [
         url: "192.168.2.39",
         sign: "二",
         children: [],
-        createTime: "2020-04-16 17:52:19"
+        createTime: "2020-04-16 17:52:19",
+        operate:['新增','修改','删除']
       }
     ],
-    createTime: "2020-04-16 17:51:24"
+    createTime: "2020-04-16 17:51:24",
+    operate:['新增','修改','删除']
   }
 ]
 
@@ -175,50 +184,6 @@ export default [
       return {
         code: 20000,
         data: menuList
-      }
-    }
-  },
-  // get getRouters
-  {
-    url: '/menu/getRouters',
-    type: 'get',
-    response: config => {
-      return {
-        code: 20000,
-        data: asyncRoutes
-      }
-    }
-  },
-  // get getRouters
-  {
-    url: '/menu/getRouters',
-    type: 'get',
-    response: config => {
-      return {
-        code: 20000,
-        data: asyncRoutes
-      }
-    }
-  },
-  // get getRouters
-  {
-    url: '/menu/getRouters',
-    type: 'get',
-    response: config => {
-      return {
-        code: 20000,
-        data: asyncRoutes
-      }
-    }
-  },
-  // get getRouters
-  {
-    url: '/menu/getRouters',
-    type: 'get',
-    response: config => {
-      return {
-        code: 20000,
-        data: asyncRoutes
       }
     }
   },

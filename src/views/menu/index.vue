@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <el-form :inline="true">
+    <!-- <el-form :inline="true">
       <el-form-item label="菜单名称">
         <el-input
           v-model="queryParams.menuName"
@@ -22,10 +22,9 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">搜索</el-button>
-        <!-- <el-button type="primary" icon="el-icon-plus" size="mini" @click="handleAdd" v-hasPermi="['system:menu:add']">新增</el-button> -->
         <el-button type="primary" icon="el-icon-plus" size="mini" @click="handleAdd">新增</el-button>
       </el-form-item>
-    </el-form>
+    </el-form> -->
 
     <menu-tree-table
       :tableColumns="tableColumns"
